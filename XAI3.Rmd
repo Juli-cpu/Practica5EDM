@@ -90,6 +90,8 @@ for(i in 1:nrow(th)){
   th[["p"]][i] <- sum(sal) / nr
 }
 
+ggplot(th, aes(x=temp, y=hum)) + geom_tile(aes(fill = p, width = 10, height = 15)) + geom_rug(alpha = 0.01) + xlab("Temperature") + ylab("Humidity") + scale_fill_gradient(name = "Number of bikes")
+
 ```
 
 
