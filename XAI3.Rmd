@@ -129,5 +129,12 @@ for(c in names(results)[1:4])
   }
 }
 
+p1 <- ggplot(sampled, aes(x=bedrooms, y=results$bedrooms)) + geom_line() + geom_rug(alpha = 0.1, sides = "b") + ylab("Prediction") + xlab("Bedrooms") + xlim(0,7)
+p2 <- ggplot(sampled, aes(x=bathrooms, y=results$bathrooms)) + geom_line() + geom_rug(alpha = 0.1, sides = "b")+ xlab("Bathrooms") + xlim(0,5)
+p3 <- ggplot(sampled, aes(x=sqft_living, y=results$sqft_living)) + geom_line() + geom_rug(alpha = 0.1, sides = "b")+ xlab("Sqft Living") + xlim(0,10000)
+p4 <- ggplot(sampled, aes(x=floors, y=results$floors)) + geom_line() + geom_rug(alpha = 0.1, sides = "b")+ xlab("Floors")  + xlim(1,3)
+
+subplot(p1,p2,p3,p4, shareX = FALSE, titleX = TRUE)
+
 ```
 
